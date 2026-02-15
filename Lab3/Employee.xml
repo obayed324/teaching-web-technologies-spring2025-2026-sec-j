@@ -3,7 +3,7 @@
   <employee>
     <id>1</id>
     <fName>John</fName>
-    <lName>Doe</fName>
+    <lName>Doe</lName>
     <address>
       <house>H# 38</house>
       <road>R# 3</road>
@@ -32,7 +32,7 @@
   <employee>
     <id>3</id>
     <fName>Ala</fName>
-    <lName>Voski</fName>
+    <lName>Voski</lName>
     <address>
       <house>H# 38</house>
       <road>R# 3</road>

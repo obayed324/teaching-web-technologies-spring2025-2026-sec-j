@@ -3,7 +3,7 @@
         <slNo>23</slNo>
         
         <fName>John</fName>
-        <lName>Carter</fName>
+        <lName>Carter</lName>
         <admissiondate>
             <day>25</day>
             <month>12</month>
@@ -14,7 +14,7 @@
     <student>
         <slNo>29</slNo>
         <fName>Bob</fName>
-        <lName>Marshal</fName>
+        <lName>Marshal</lName>
         <admissiondate>
             <day>13</day>
             <month>01</month>
@@ -26,7 +26,7 @@
         <slNo>35</slNo>
         
         <fName>Clark</fName>
-        <lName>Kent</fName>
+        <lName>Kent</lName>
         <admissiondate>
             <day>17</day>
             <month>06</month>
