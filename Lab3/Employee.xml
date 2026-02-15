@@ -2,7 +2,7 @@
 <company>
   <employee>
     <id>1</id>
-    <fName>John Doe</fName>
+    <fName>John</fName>
     <lName>Doe</fName>
     <address>
       <house>H# 38</house>

@@ -1,7 +1,9 @@
 <students>
     <student>
-        <slno>23</slno>
-        <name>John Carter</name>
+        <slNo>23</slNo>
+        
+        <fName>John</fName>
+        <lName>Carter</fName>
         <admissiondate>
             <day>25</day>
             <month>12</month>
@@ -10,8 +12,9 @@
     </student>
 
     <student>
-        <slno>29</slno>
-        <name>Bob Marshal</name>
+        <slNo>29</slNo>
+        <fName>Bob</fName>
+        <lName>Marshal</fName>
         <admissiondate>
             <day>13</day>
             <month>01</month>
@@ -20,8 +23,10 @@
     </student>
 
     <student>
-        <slno>35</slno>
-        <name>Clark Kent</name>
+        <slNo>35</slNo>
+        
+        <fName>Clark</fName>
+        <lName>Kent</fName>
         <admissiondate>
             <day>17</day>
             <month>06</month>
