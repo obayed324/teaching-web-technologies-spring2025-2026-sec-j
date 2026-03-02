@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date of Birth Validation</title>
+</head>
+
+<body>
+
+    <h3>Date of Birth</h3>
+
+    <fieldset style="width: 180px;">
+        <legend>Date of Birth</legend>
+
+        &nbsp; dd &nbsp;&nbsp; mm &nbsp;&nbsp; yyyy <br>
+
+        <input type="text" id="dd" name="dd" size="2">
+        <input type="text" id="mm" name="mm" size="3">
+        <input type="text" id="yyyy" name="yyyy" size="6">
+        <hr>
+
+        <br>
+        <button onclick="validateDOB()">Submit</button>
+    </fieldset>
+    
+    
+
+    <p id="msg" style="color:red;"></p>
+
+    <script>
+        function validateDOB() {
+            let dd = document.getElementById("dd").value.trim();
+            let mm = document.getElementById("mm").value.trim();
+            let yyyy = document.getElementById("yyyy").value.trim();
+            let msg = document.getElementById("msg");
+
+            // Check empty
+            if (dd === "" || mm === "" || yyyy === "") {
+                msg.textContent = "All fields must be filled!";
+                return;
+            }
+
+            // Convert to numbers
+            let day = Number(dd);
+            let month = Number(mm);
+            let year = Number(yyyy);
+
+            // Number validation
+            if (isNaN(day) || isNaN(month) || isNaN(year)) {
+                msg.textContent = "All values must be valid numbers!";
+                return;
+            }
+
+            
+            if (day < 1 || day > 31) {
+                msg.textContent = "Day must be between 1 - 31!";
+                return;
+            }
+            if (month < 1 || month > 12) {
+                msg.textContent = "Month must be between 1 - 12!";
+                return;
+            }
+            if (year < 1900 || year > 2016) {
+                msg.textContent = "Year must be between 1900 - 2026!";
+                return;
+            }
+
+            msg.style.color = "green";
+            msg.textContent = "Valid Date!";
+        }
+    </script>
+
+</body>
+
+</html>

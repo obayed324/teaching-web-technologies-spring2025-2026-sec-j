@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
+<body>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" placeholder="sample@example.com"><br>
+    <span id="error" style="color:red;"></span>
+    <br><br>
+
+    <input type="button" value="Submit" onclick="emailValidation()">
+
+    <script>
+        function emailValidation() {
+
+            let email = document.getElementById("email").value.trim();
+            let error = document.getElementById("error");
+            error.innerText = "";
+
+            
+            if (email === "") {
+                error.innerText = "Email cannot be empty.";
+                return false;
+            }
+
+            if (email.includes(" ")) {
+                error.innerText = "Email cannot contain spaces.";
+                return false;
+            }
+            
+            let atCount = 0;
+            for (let i = 0; i < email.length; i++) {
+                if (email[i] === "@") {
+                    atCount++;
+                }
+            }
+
+            if (atCount !== 1) {
+                error.innerText = "Email must contain exactly one '@' symbol.";
+                return false;
+            }
+
+            let parts = email.split("@");
+            let localPart = parts[0];
+            let domainPart = parts[1];
+
+           
+            if (localPart === "" || domainPart === "") {
+                error.innerText = "Invalid email format.";
+                return false;
+            }
+
+            
+            if (domainPart.indexOf(".") === -1) {
+                error.innerText = "Domain must contain a dot (example.com).";
+                return false;
+            }
+
+            
+            if (domainPart.startsWith(".") || domainPart.endsWith(".")) {
+                error.innerText = "Invalid domain format.";
+                return false;
+            }
+
+            alert("Email is valid!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

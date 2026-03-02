@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Picture</title>
+</head>
+<body>
+    <fieldset style="width: 30%;">
+        <legend>Profile picture</legend>
+
+        <label for="userId">User Id</label>
+        <input type="text" name="userId" id="userId"><br><br>
+        <span id="errMsg" style="color: red;"></span>
+
+        <label for="picture">Picture</label>
+        <input type="file" name="picture" id="picture" required><br>
+        <span id="imageErr" style="color: red;"></span>
+
+        <hr style="width: 95%; margin-left: 10px;height: 2px; background-color: black; border: none;">
+   
+
+       <input type="submit" value="Submit" onclick=" profilePictureValidation()">
+    </fieldset>
+
+
+    <script>
+        function profilePictureValidation(){
+            let userId = document.getElementById("userId").value;
+            let picture =document.getElementById("picture").value;
+            let errMsg = document.getElementById("errMsg");
+            let imageErr = document.getElementById("imageErr");
+
+            errMsg.innerText=""
+            imageErr.innerText=""
+
+            if(userId === ""){
+                errMsg.innerText = "User ID required";
+            }
+            else if(isNaN(userId) || Number(userId) <= 0){
+                errMsg.innerText = "Please Provide Positive Number";
+            }
+
+            if(picture === ""){
+                imageErr.innerText = "Please Provide The your profile picture"
+            }
+
+
+        }
+    </script>
+</body>
+</html>
