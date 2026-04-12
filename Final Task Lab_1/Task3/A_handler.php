@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_REQUEST['submit'])){
+    if(isset($_POST['submit'])){
 
         $dd   = $_REQUEST['dd'];
         $mm   = $_REQUEST['mm'];
