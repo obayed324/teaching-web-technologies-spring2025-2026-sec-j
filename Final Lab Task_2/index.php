@@ -43,7 +43,7 @@
             margin-left: 10px;
             font-size: 14px;
         }
-           
+
 
         .content {
             min-height: 200px;
@@ -65,9 +65,10 @@
         <div class="header">
             <div class="logo"><span>X</span>Company</div>
             <div class="nav">
-                <a href="">Home</a> |
-                <a href="">Login</a> |
-                <a href="">Registration</a>
+                <a href="index.php">Home</a> |
+                <a href="login.php">Login</a> |
+                <a href="register.php">Registration</a>
+
             </div>
         </div>
         <div class="content">
