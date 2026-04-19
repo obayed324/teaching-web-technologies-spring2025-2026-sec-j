@@ -122,9 +122,14 @@
                 <?php endif; ?>
 
                 <?php if (isset($_GET['found'])): ?>
-                    <p class="success">Your password has been sent to your email. (Demo: Check session storage)</p>
+                    <p class="success">
+                        Account found! <br />
+                        Your Username is: <strong><?php echo htmlspecialchars($_GET['username']); ?></strong> <br />
+                        Your Password is: <strong><?php echo htmlspecialchars($_GET['password']); ?></strong> <br /> <br />
+                        
+                    </p>
                 <?php endif; ?>
-                
+
                 <form method="post" action="forgotCheck.php">
                     <table>
                         <tr>
