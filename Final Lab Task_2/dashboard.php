@@ -4,6 +4,8 @@ if (!isset($_SESSION['status'])) {
     header('location: login.php');
     exit();
 }
+
+$page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +93,15 @@ if (!isset($_SESSION['status'])) {
             font-size: 14px;
         }
 
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .sidebar ul li a.active {
+            font-weight: bold;
+            color: green;
+        }
+
         .main {
             flex: 1;
             padding: 20px 25px;
@@ -113,7 +124,7 @@ if (!isset($_SESSION['status'])) {
         <div class="header">
             <div class="logo"><span>X</span>Company</div>
             <div class="nav">
-                Logged in as <a href="viewProfile.php"><?php echo htmlspecialchars($_SESSION['username']); ?></a> |
+                Logged in as <a href="dashboard.php?page=viewProfile.php"><?php echo htmlspecialchars($_SESSION['username']); ?></a> |
                 <a href="logout.php">Logout</a>
             </div>
         </div>
@@ -125,23 +136,34 @@ if (!isset($_SESSION['status'])) {
                 <strong>Account</strong>
                 <hr />
                 <ul>
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="viewProfile.php">View Profile</a></li>
-                    <li><a href="editProfile.php">Edit Profile</a></li>
-                    <li><a href="changeProfilePicture.php">Change Profile Picture</a></li>
-                    <li><a href="changePassword.php">Change Password</a></li>
+                    <li><a href="dashboard.php" class="<?php echo ($page == 'dashboard') ? 'active' : ''; ?>">Dashboard</a></li>
+                    <li><a href="dashboard.php?page=viewProfile.php" class="<?php echo ($page == 'viewProfile.php') ? 'active' : ''; ?>">View Profile</a></li>
+                    <li><a href="dashboard.php?page=editProfile.php" class="<?php echo ($page == 'editProfile.php') ? 'active' : ''; ?>">Edit Profile</a></li>
+                    <li><a href="dashboard.php?page=changeProfilePicture.php" class="<?php echo ($page == 'changeProfilePicture.php') ? 'active' : ''; ?>">Change Profile Picture</a></li>
+                    <li><a href="dashboard.php?page=changePassword.php" class="<?php echo ($page == 'changePassword.php') ? 'active' : ''; ?>">Change Password</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
 
-            
+            <!-- MAIN CONTENT -->
             <div class="main">
-                <h2>Welcome <?php echo htmlspecialchars($_SESSION['name']); ?></h2>
+                <?php
+                if ($page == 'dashboard') {
+                    echo "<h2>Welcome " . htmlspecialchars($_SESSION['name']) . "</h2>";
+                } elseif ($page == 'viewProfile.php') {
+                    include('viewProfile.php');
+                } elseif ($page == 'editProfile.php') {
+                    include('editProfile.php');
+                } elseif ($page == 'changeProfilePicture.php') {
+                    include('changeProfilePicture.php');
+                } elseif ($page == 'changePassword.php') {
+                    include('changePassword.php');
+                }
+                ?>
             </div>
 
         </div>
 
-       
         <div class="footer">Copyright &copy; 2017</div>
 
     </div>
@@ -149,4 +171,5 @@ if (!isset($_SESSION['status'])) {
 
 </html>
 
-<!-- web_tech/PHP/Final Lab Task_2/dashboard.php -->
+
+ <!-- /Users/mdobayedsarker/Desktop/Web_technologies/Final Lab Task_2/dashboard.php -->
